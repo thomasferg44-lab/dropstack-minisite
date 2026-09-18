@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" width="900" height="1100">
+  <rect width="900" height="1100" fill="#6a8f5f"/>
+  <ellipse cx="450" cy="980" rx="700" ry="260" fill="#3f6b44"/>
+  <circle cx="450" cy="420" r="150" fill="#d9c4a6"/>
+  <rect x="270" y="560" width="360" height="360" rx="120" fill="#2f5233"/>
+  <text x="50" y="100" font-family="system-ui, sans-serif" font-size="48" fill="#fff" opacity=".85">Team photo — placeholder</text>
+</svg>
