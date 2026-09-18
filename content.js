@@ -52,7 +52,21 @@ export const content = {
       priceFrom: 1500,
     },
   ],
-  gallery: [],
+  gallery: [
+    {
+      before: "/images/gallery/before-1.svg",
+      after: "/images/gallery/after-1.svg",
+      caption: "Front garden makeover, Glenashley — new beds, lawn and irrigation",
+    },
+    {
+      before: "/images/gallery/before-2.svg",
+      after: "/images/gallery/after-2.svg",
+      caption: "Overgrown verge cleared and replanted, Umhlanga",
+    },
+    { after: "/images/gallery/single-1.svg", caption: "Weekly maintenance client, Durban North" },
+    { after: "/images/gallery/single-2.svg", caption: "Drip irrigation on a sloped bed, La Lucia" },
+    { after: "/images/gallery/single-3.svg", caption: "Instant lawn, two weeks after installation" },
+  ],
   about: {
     heading: "",
     body: "",

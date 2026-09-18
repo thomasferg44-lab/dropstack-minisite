@@ -39,3 +39,9 @@ html {
 body {
   @apply font-sans text-gray-800 bg-white antialiased;
 }
+
+/* Before/after slider: the invisible range input needs a tall thumb so the
+   whole card is a drag target, not just a thin strip. */
+.compare-range { -webkit-appearance: none; appearance: none; background: transparent; }
+.compare-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 2.75rem; height: 100vh; }
+.compare-range::-moz-range-thumb { width: 2.75rem; height: 100vh; border: 0; }

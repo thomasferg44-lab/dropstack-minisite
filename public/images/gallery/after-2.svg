@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#5a8a52"/>
+  <ellipse cx="600" cy="760" rx="820" ry="260" fill="#35603a"/>
+  <circle cx="900" cy="300" r="140" fill="#35603a" opacity=".55"/>
+  <circle cx="260" cy="380" r="90" fill="#35603a" opacity=".4"/>
+  <text x="60" y="120" font-family="system-ui, sans-serif" font-size="56" fill="#fff" opacity=".85">AFTER — placeholder</text>
+</svg>

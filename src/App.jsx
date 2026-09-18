@@ -3,12 +3,14 @@ import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Hero from "./sections/Hero.jsx";
 import Services from "./sections/Services.jsx";
+import Gallery from "./sections/Gallery.jsx";
 
 // Page sections in order. Each entry renders only when it has content, and
 // the header builds its nav from whatever actually rendered, so an empty
 // section never leaves a dead anchor. Later build stages add to this list.
 const sections = [
   { id: "services", label: "Services", show: content.services.length > 0, Component: Services },
+  { id: "gallery", label: "Our work", show: content.gallery.length > 0, Component: Gallery },
 ];
 
 export default function App() {
