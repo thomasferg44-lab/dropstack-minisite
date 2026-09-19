@@ -5,10 +5,9 @@ import App from "./App.jsx";
 import { config } from "./lib/config.js";
 import { applyTheme } from "./lib/theme.js";
 
+// Title, meta and structured data are injected into index.html at build
+// time by vite-plugins/seo.js — crawlers don't run this file.
 applyTheme(config);
-document.title = config.tagline
-  ? `${config.businessName} — ${config.tagline}`
-  : config.businessName;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
