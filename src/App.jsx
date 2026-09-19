@@ -8,6 +8,7 @@ import About from "./sections/About.jsx";
 import Testimonials from "./sections/Testimonials.jsx";
 import ServiceAreas from "./sections/ServiceAreas.jsx";
 import Faq from "./sections/Faq.jsx";
+import Contact from "./sections/Contact.jsx";
 
 // Page sections in order. Each entry renders only when it has content, and
 // the header builds its nav from whatever actually rendered, so an empty
@@ -19,6 +20,7 @@ const sections = [
   { id: "testimonials", label: "Reviews", show: content.testimonials.length > 0, Component: Testimonials, nav: false },
   { id: "areas", label: "Areas", show: config.serviceAreas.length > 0, Component: ServiceAreas, nav: false },
   { id: "faq", label: "FAQ", show: content.faq.length > 0, Component: Faq },
+  { id: "contact", label: "Contact", show: true, Component: Contact },
 ];
 
 export default function App() {
