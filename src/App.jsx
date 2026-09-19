@@ -9,6 +9,7 @@ import Testimonials from "./sections/Testimonials.jsx";
 import ServiceAreas from "./sections/ServiceAreas.jsx";
 import Faq from "./sections/Faq.jsx";
 import Contact from "./sections/Contact.jsx";
+import FloatingWhatsApp from "./components/FloatingWhatsApp.jsx";
 
 // Page sections in order. Each entry renders only when it has content, and
 // the header builds its nav from whatever actually rendered, so an empty
@@ -35,6 +36,7 @@ export default function App() {
         ))}
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </>
   );
 }
