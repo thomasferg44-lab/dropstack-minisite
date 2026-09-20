@@ -17,6 +17,7 @@ export default function LeadForm() {
   const [values, setValues] = useState(EMPTY);
   const [state, setState] = useState("idle"); // idle | sending | sent | error
   const hasEndpoint = Boolean(config.leadFormEndpoint);
+  const copy = content.sections.leadForm;
 
   const set = (k) => (e) => setValues((v) => ({ ...v, [k]: e.target.value }));
 
@@ -65,10 +66,8 @@ export default function LeadForm() {
       className="rounded-2xl border border-gray-200 bg-white p-6 lg:p-8"
       noValidate={!hasEndpoint}
     >
-      <h3 className="font-display text-xl font-medium text-gray-900">Request a quote</h3>
-      <p className="mt-1.5 text-sm text-gray-600">
-        Tell us what you need and we'll come back to you with a price.
-      </p>
+      <h3 className="font-display text-xl font-medium text-gray-900">{copy.heading}</h3>
+      {copy.intro && <p className="mt-1.5 text-sm text-gray-600">{copy.intro}</p>}
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <Field label="Your name" required>
@@ -151,9 +150,7 @@ export default function LeadForm() {
               </a>
             )}
           </div>
-          <p className="mt-3 text-xs text-gray-500">
-            Opens WhatsApp or your mail app with these details already filled in.
-          </p>
+          {copy.note && <p className="mt-3 text-xs text-gray-500">{copy.note}</p>}
         </div>
       )}
     </form>

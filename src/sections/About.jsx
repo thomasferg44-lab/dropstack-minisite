@@ -20,7 +20,7 @@ export default function About({ id }) {
             />
           )}
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">About us</p>
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent-ink mb-3">{content.sections.about.eyebrow}</p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight text-gray-900 text-balance">
               {heading}
             </h2>

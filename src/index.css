@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
+/* Fonts are self-hosted rather than loaded from Google Fonts. A
+   fonts.googleapis.com stylesheet is render-blocking and costs a DNS lookup,
+   a TLS handshake and two round trips before any text can paint; Lighthouse
+   measured ~1.4s of that on mobile. These are the Latin variable subsets,
+   which cover every weight the page uses in one file each. */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-latin-var.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter-latin-var.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Brand colours are set on :root at boot by src/lib/theme.js from companyConfig.js.
    These defaults only matter for the split second before React mounts. */
 :root {
@@ -8,11 +28,13 @@
   --brand-primary-active: #030712;
   --brand-primary-soft: #f3f4f6;
   --brand-primary-contrast: #ffffff;
+  --brand-primary-ink: #1f2937;
   --brand-accent: #4b5563;
   --brand-accent-hover: #374151;
   --brand-accent-active: #1f2937;
   --brand-accent-soft: #f3f4f6;
   --brand-accent-contrast: #ffffff;
+  --brand-accent-ink: #4b5563;
 }
 
 @theme inline {
@@ -21,11 +43,13 @@
   --color-primary-active: var(--brand-primary-active);
   --color-primary-soft: var(--brand-primary-soft);
   --color-primary-contrast: var(--brand-primary-contrast);
+  --color-primary-ink: var(--brand-primary-ink);
   --color-accent: var(--brand-accent);
   --color-accent-hover: var(--brand-accent-hover);
   --color-accent-active: var(--brand-accent-active);
   --color-accent-soft: var(--brand-accent-soft);
   --color-accent-contrast: var(--brand-accent-contrast);
+  --color-accent-ink: var(--brand-accent-ink);
 
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;

@@ -183,9 +183,11 @@ export default function seoPlugin() {
     transformIndexHtml: {
       order: "pre",
       handler(html) {
+        // console.warn, not this.warn: `this` is not the plugin context
+        // inside transformIndexHtml's object form, so this.warn throws.
         if (!companyConfig.siteUrl) {
-          this.warn?.(
-            "[seo] companyConfig.siteUrl is not set — canonical, og:url, sitemap and absolute image URLs will be incomplete.",
+          console.warn(
+            "\n[seo] companyConfig.siteUrl is not set — canonical, og:url, sitemap and absolute image URLs will be incomplete.\n",
           );
         }
         return html

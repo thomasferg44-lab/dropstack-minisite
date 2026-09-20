@@ -14,6 +14,7 @@ export default function Gallery({ id }) {
   const pairs = items.filter((g) => g.before);
   const singles = items.filter((g) => !g.before);
   const [active, setActive] = useState(null);
+  const copy = content.sections.gallery;
 
   const step = useCallback(
     (d) => setActive((i) => (i == null ? i : (i + d + singles.length) % singles.length)),
@@ -23,8 +24,9 @@ export default function Gallery({ id }) {
   return (
     <Section
       id={id}
-      eyebrow="Our work"
-      heading={pairs.length ? "Drag to see the difference." : "Recent work."}
+      eyebrow={copy.eyebrow}
+      heading={pairs.length ? copy.headingCompare || copy.heading : copy.heading}
+      intro={copy.intro}
       tone="soft"
     >
       {pairs.length > 0 && (

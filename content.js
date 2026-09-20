@@ -1,6 +1,28 @@
 // Page content. Any section with an empty array does not render.
 // Image paths are relative to /public.
 export const content = {
+  // Section headings. Every key is optional — anything left out falls back
+  // to trade-neutral wording in src/lib/config.js.
+  sections: {
+    services: {
+      eyebrow: "What we do",
+      heading: "Straightforward services, clear prices.",
+      intro: "Every job is quoted up front. If it's not on this list, ask — we probably do it.",
+    },
+    gallery: { eyebrow: "Our work", headingCompare: "Drag to see the difference." },
+    testimonials: { eyebrow: "What clients say", heading: "Don't take our word for it." },
+    faq: { eyebrow: "Common questions", heading: "Things people ask us." },
+    contact: {
+      eyebrow: "Get in touch",
+      heading: "Let's sort your garden out.",
+      intro: "Send us a message, or reach us directly — whichever suits you.",
+    },
+    leadForm: {
+      heading: "Request a quote",
+      intro: "Tell us what you need and we'll come back to you with a price.",
+    },
+  },
+
   hero: {
     headline: "A garden you're proud to come home to.",
     subhead:

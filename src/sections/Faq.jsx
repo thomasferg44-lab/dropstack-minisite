@@ -4,8 +4,9 @@ import Section from "../components/Section.jsx";
 // Native <details> accordion: keyboard and screen-reader support for free,
 // content stays in the DOM for search engines, no JS state.
 export default function Faq({ id }) {
+  const copy = content.sections.faq;
   return (
-    <Section id={id} eyebrow="Common questions" heading="Things people ask us.">
+    <Section id={id} eyebrow={copy.eyebrow} heading={copy.heading} intro={copy.intro}>
       <div className="max-w-3xl divide-y divide-gray-200 border-y border-gray-200">
         {content.faq.map((f, i) => (
           <details key={i} className="group py-5">

@@ -3,8 +3,9 @@ import Section from "../components/Section.jsx";
 
 export default function Testimonials({ id }) {
   const items = content.testimonials;
+  const copy = content.sections.testimonials;
   return (
-    <Section id={id} eyebrow="What clients say" heading="Don't take our word for it." tone="soft">
+    <Section id={id} eyebrow={copy.eyebrow} heading={copy.heading} intro={copy.intro} tone="soft">
       <ul className={`grid gap-5 lg:gap-6 ${items.length === 1 ? "max-w-xl" : items.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3"}`}>
         {items.map((t, i) => (
           <li key={i} className="flex flex-col rounded-2xl bg-white border border-gray-200 p-6 lg:p-7">

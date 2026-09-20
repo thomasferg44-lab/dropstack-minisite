@@ -8,7 +8,7 @@ export default function Section({ id, eyebrow, heading, intro, tone = "white", c
         {(heading || eyebrow) && (
           <header className="max-w-2xl mb-12 lg:mb-16">
             {eyebrow && (
-              <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">
+              <p className="text-sm font-semibold uppercase tracking-wider text-accent-ink mb-3">
                 {eyebrow}
               </p>
             )}

@@ -3,12 +3,13 @@ import Section from "../components/Section.jsx";
 import Icon from "../components/Icon.jsx";
 
 export default function Services({ id }) {
+  const copy = content.sections.services;
   return (
     <Section
       id={id}
-      eyebrow="What we do"
-      heading="Straightforward services, clear prices."
-      intro="Every job is quoted up front. If it's not on this list, ask — we probably do it."
+      eyebrow={copy.eyebrow}
+      heading={copy.heading}
+      intro={copy.intro}
     >
       <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {content.services.map((s) => (
@@ -24,7 +25,7 @@ export default function Services({ id }) {
               <p className="mt-2 text-gray-600 leading-relaxed">{s.description}</p>
             )}
             {s.priceFrom != null && (
-              <p className="mt-auto pt-5 text-sm font-semibold text-accent">
+              <p className="mt-auto pt-5 text-sm font-semibold text-accent-ink">
                 from {currency.format(s.priceFrom)}
               </p>
             )}

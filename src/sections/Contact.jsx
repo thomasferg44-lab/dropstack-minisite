@@ -1,4 +1,4 @@
-import { config } from "../lib/config.js";
+import { config, content } from "../lib/config.js";
 import Section from "../components/Section.jsx";
 import LeadForm from "../components/LeadForm.jsx";
 import Icon from "../components/Icon.jsx";
@@ -6,13 +6,14 @@ import Icon from "../components/Icon.jsx";
 // Map is a link, not an iframe: an embedded Google map is a render-blocking
 // third-party payload that would cost more Lighthouse points than it earns.
 export default function Contact({ id }) {
+  const copy = content.sections.contact;
   const { address, mapsUrl, phoneDisplay, whatsappNumber, email, hours } = config;
   return (
     <Section
       id={id}
-      eyebrow="Get in touch"
-      heading="Let's sort your garden out."
-      intro="Send us a message, or reach us directly — whichever suits you."
+      eyebrow={copy.eyebrow}
+      heading={copy.heading}
+      intro={copy.intro}
       tone="soft"
     >
       <div className="grid gap-8 lg:grid-cols-[5fr_7fr] lg:gap-12 items-start">
@@ -82,7 +83,7 @@ function ContactRow({ icon, label, children }) {
         <Icon name={icon} className="size-5" />
       </span>
       <div className="min-w-0">
-        <p className="text-sm font-semibold uppercase tracking-wide text-gray-500">{label}</p>
+        <p className="text-sm font-semibold uppercase tracking-wide text-gray-600">{label}</p>
         <div className="mt-0.5 text-lg text-gray-800">{children}</div>
       </div>
     </li>

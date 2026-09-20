@@ -19,6 +19,28 @@ const configDefaults = {
   leadFormEndpoint: null,
 };
 
+// Trade-neutral section copy. A client that doesn't override these still
+// gets sensible headings — no landscaping wording leaking into a salon's site.
+const sectionDefaults = {
+  services: { eyebrow: "What we do", heading: "Our services", intro: "" },
+  gallery: {
+    eyebrow: "Our work",
+    heading: "Recent work",
+    headingCompare: "See the difference.",
+    intro: "",
+  },
+  about: { eyebrow: "About us" },
+  testimonials: { eyebrow: "What clients say", heading: "What our customers say", intro: "" },
+  areas: { heading: "Areas we serve", intro: "" },
+  faq: { eyebrow: "Common questions", heading: "Frequently asked questions", intro: "" },
+  contact: { eyebrow: "Get in touch", heading: "Get in touch", intro: "" },
+  leadForm: {
+    heading: "Request a quote",
+    intro: "Tell us what you need and we'll come back to you.",
+    note: "Opens WhatsApp or your mail app with these details already filled in.",
+  },
+};
+
 const contentDefaults = {
   hero: { headline: "", subhead: "", ctaLabel: "Get in touch", backgroundImage: "" },
   services: [],
@@ -34,6 +56,12 @@ export const content = {
   ...rawContent,
   hero: { ...contentDefaults.hero, ...stripEmpty(rawContent.hero) },
   about: { ...contentDefaults.about, ...stripEmpty(rawContent.about) },
+  sections: Object.fromEntries(
+    Object.entries(sectionDefaults).map(([key, defaults]) => [
+      key,
+      { ...defaults, ...stripEmpty(rawContent.sections?.[key]) },
+    ]),
+  ),
 };
 
 function stripEmpty(obj = {}) {
